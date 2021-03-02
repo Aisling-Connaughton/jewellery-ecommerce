@@ -1,0 +1,118 @@
+-- -----------------------------------------------------
+-- Schema full-stack-ecommerce
+-- -----------------------------------------------------
+
+USE `jewellery-ecommerce` ;
+
+-- -----------------------------------------------------
+-- Table `jewellery-ecommerce`.`product_category`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `jewellery-ecommerce`.`product_category` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `category_name` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE=InnoDB
+AUTO_INCREMENT = 1;
+
+-- -----------------------------------------------------
+-- Table `jewellery-ecommerce`.`product`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `jewellery-ecommerce`.`product` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `sku` VARCHAR(255) DEFAULT NULL,
+  `name` VARCHAR(255) DEFAULT NULL,
+  `description` VARCHAR(255) DEFAULT NULL,
+  `unit_price` DECIMAL(13,2) DEFAULT NULL,
+  `image_url` VARCHAR(255) DEFAULT NULL,
+  `active` BIT DEFAULT 1,
+  `units_in_stock` INT(11) DEFAULT NULL,
+  `date_created` DATETIME(6) DEFAULT NULL,
+  `last_updated` DATETIME(6) DEFAULT NULL,
+  `category_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_category` (`category_id`),
+  CONSTRAINT `fk_category` FOREIGN KEY (`category_id`) REFERENCES `product_category` (`id`)
+) 
+ENGINE=InnoDB
+AUTO_INCREMENT = 1;
+
+-- -----------------------------------------------------
+-- Categories
+-- -----------------------------------------------------
+INSERT INTO product_category(category_name) VALUES ('Earrings');
+INSERT INTO product_category(category_name) VALUES ('Rings');
+INSERT INTO product_category(category_name) VALUES ('Bracelets');
+INSERT INTO product_category(category_name) VALUES ('Necklaces');
+
+-- -----------------------------------------------------
+-- Earrings
+-- -----------------------------------------------------
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1000', 'Fabba Earrings', 'Beaded drop earrings in gold.', 'assets/images/products/earrings/Beaded drop earrings in gold.jpg', 1, 70, 14.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1001', 'Nija Earrings', 'Blue gem drop earrings in gold.', 'assets/images/products/earrings/Blue gem drop earrings in gold.jpg', 1, 100, 20.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1002', 'Nol Earrings', 'Chunky hoop earrings in gold with shell drop.', 'assets/images/products/earrings/Chunky hoop earrings in gold with shell drop.jpg', 1, 30, 17.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1003', 'Fomo Earrings', 'Filigree earrings in gold.', 'assets/images/products/earrings/Filigree earrings in gold.jpg', 1, 20, 13.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1004', 'Fippi Earrings', 'Gold crochet gem earrings.', 'assets/images/products/earrings/Gold crochet gem earrings.jpg', 1, 110, 18.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1005', 'Sol Earrings', 'Shell drop earrings in gold.', 'assets/images/products/earrings/Shell drop earrings in gold.jpg', 1, 70, 23.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1006', 'Sigred Earrings', 'Statement interlocked earrings in gold.', 'assets/images/products/earrings/Statement interlocked earrings in gold.jpg', 1, 55, 14.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1007', 'Cassio Earrings', 'Thin hoop earrings 20mm in gold.', 'assets/images/products/earrings/Thin hoop earrings 20mm in gold.jpg', 1, 60, 16.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1008', 'Ava Earrings', 'Twisted diamonte drop earrings in gold.', 'assets/images/products/earrings/Twisted diamonte drop earrings in gold.jpg', 1, 10, 25.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1009', 'Clara Earrings', 'Pearl hoop earrings in gold.', 'assets/images/products/earrings/Pearl hoop earrings in gold.jpg', 1, 25, 23.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1010', 'Rainbow Earrings', 'Rainbow gems drop earrings.', 'assets/images/products/earrings/Rainbow gems drop earrings.jpg', 1, 10, 24.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1011', 'Clarice Earrings', 'Antique blue gem and diamond drop earrings in silver.', 'assets/images/products/earrings/Antique blue gem and diamond drop earrings in silver.jpg', 1, 74, 54.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1012', 'Simone Earrings', 'Antique pink gem and diamond drop earrings in silver.', 'assets/images/products/earrings/Antique pink gem and diamond drop earrings in silver.jpg', 1, 9, 29.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1013', 'Margaret Earrings', 'Antique silver diamond drop earrings.', 'assets/images/products/earrings/Antique silver diamond drop earrings.jpg', 1, 30, 17.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1014', 'Tafiti Earrings', 'Beaded circle drop earrings.', 'assets/images/products/earrings/Beaded circle drop earrings.jpg', 1, 20, 13.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1015', 'Wisp Earrings', 'Feather drop earrings in gold.', 'assets/images/products/earrings/Feather drop earrings in gold.jpg', 1, 110, 18.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1016', 'Ruth Earrings', 'Flower silver and beaded drop earrings.', 'assets/images/products/earrings/Flower silver and beaded drop earrings.jpg', 1, 70, 23.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1017', 'Miranda Earrings', 'Gold drop earrings with hanging gem.', 'assets/images/products/earrings/Gold drop earrings with hanging gem.jpg', 1, 55, 14.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1018', 'Persephone Earrings', 'Gold hoop earrings with shells.', 'assets/images/products/earrings/Gold hoop earrings with shells.jpg', 1, 60, 16.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1019', 'North Star Earrings', 'Gold star drop earrings.', 'assets/images/products/earrings/Gold star drop earrings.jpg', 1, 10, 25.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1020', 'Tiffany Earrings', 'Ornate diamond stud earrings.', 'assets/images/products/earrings/Ornate diamond stud earrings.jpg', 1, 25, 23.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1021', 'Charlotte Earrings', 'Pearl and gem drop gold earrings.', 'assets/images/products/earrings/Pearl and gem drop gold earrings.jpg', 1, 10, 24.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1022', 'Anne Earrings', 'Rose gem gold stud earrings.', 'assets/images/products/earrings/Rose gem gold stud earrings.jpg', 1, 60, 16.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1023', 'Diana Earrings', 'Sapphire stud earrings.', 'assets/images/products/earrings/Sapphire stud earrings.jpg', 1, 10, 25.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1024', 'Capri Earrings', 'Shell drop earrings.', 'assets/images/products/earrings/Shell drop earrings.jpg', 1, 25, 23.99, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('EARRINGS-1025', 'Napoli Earrings', 'Thick gold hoop earrings.', 'assets/images/products/earrings/Thick gold hoop earrings.jpg', 1, 10, 24.99, 1, NOW());
+
+
+-- -----------------------------------------------------
+-- Rings
+-- -----------------------------------------------------
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('RINGS-1000', 'Claria Rings', 'Diamond band and diamond stud rings in rose gold.', 'assets/images/products/rings/Diamond band and diamond stud rings in rose gold.jpg', 1, 17, 128.99, 2, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('RINGS-1001', 'Maine Ring', 'Diamond ring with diamond double band in silver.', 'assets/images/products/rings/Diamond ring with diamond double band in silver.jpg', 1, 3, 215.99, 2, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('RINGS-1002', 'Sahira Ring', 'Double band diamond stud ring in rose gold.', 'assets/images/products/rings/Double band diamond stud ring in rose gold.jpg', 1, 80, 218.99, 2, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('RINGS-1003', 'Aspire Ring', 'Italian design fashion gold ring.', 'assets/images/products/rings/Italian design fashion gold ring.jpg', 1, 100, 61.99, 2, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('RINGS-1004', 'Dorian Ring', 'Silver dome ring.', 'assets/images/products/rings/Silver dome ring.jpg', 1, 100, 120.99, 2, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('RINGS-1005', 'Azura Ring', 'Square diamond with diamond surround in silver', 'assets/images/products/rings/Square diamond with diamond surround in silver.jpg', 1, 60, 140.99, 2, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('RINGS-1006', 'Gracia Ring', 'Stacked diamond.', 'assets/images/products/rings/Stacked diamond.jpg', 1, 11, 180.99, 2, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('RINGS-1007', 'Arlington Rings', 'Trio stacked gold rings.', 'assets/images/products/rings/Trio stacked gold rings.jpg', 1, 50, 50.99, 2, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('RINGS-1008', 'Starling Rings', 'Two stacked gold rings', 'assets/images/products/rings/Two stacked gold rings.jpg', 1, 23, 40.99, 2, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('RINGS-1009', 'Panacea Ring', 'Square diamond stud ring in gold', 'assets/images/products/rings/Square diamond stud ring in gold.jpg', 1, 10, 165.99, 2, NOW());
+
+-- -----------------------------------------------------
+-- Bracelets
+-- -----------------------------------------------------
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('BRACELET-1000', 'Ophelia Bracelet', 'Black and gold bracelet.', 'assets/images/products/bracelets/Black and gold bracelet.jpg', 1, 61, 55.99, 3, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('BRACELET-1001', 'Lizzie Bracelet', 'Chain link bracelet in gold.', 'assets/images/products/bracelets/Chain link bracelet in gold.jpg', 1, 15, 45.99, 3, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('BRACELET-1002', 'Celestial Bracelet', 'Diamond studded gold rose cuff.', 'assets/images/products/bracelets/Diamond studded gold rose cuff.jpg', 1, 30, 65.99, 3, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('BRACELET-1003', 'Moonstruck Bracelet', 'Silver bangle with hearts.', 'assets/images/products/bracelets/Silver bangle with hearts.jpg', 1, 20, 35.99, 3, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('BRACELET-1004', 'La Boheme Bracelets', 'Trio thin gold bangles', 'assets/images/products/bracelets/Trio thin gold bangles.jpg', 1, 11, 63.99, 3, NOW());
+
+-- -----------------------------------------------------
+-- Necklaces
+-- -----------------------------------------------------
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1000', 'Cherish Necklace', 'Black gem silver pendant necklace.', 'assets/images/products/necklaces/Black gem silver pendant necklace.jpg', 1, 70, 63.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1001', 'Saffron Necklace', 'Love Actually gold heart pendant necklace.', 'assets/images/products/necklaces/Love Actually gold heart pendant necklace.jpg', 1, 40, 133.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1002', 'Alice Necklace', 'Silver link necklace.', 'assets/images/products/necklaces/Silver link necklace.jpg', 1, 6, 48.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1003', 'Liviana Necklace', 'Thin link gold necklace.', 'assets/images/products/necklaces/Thin link gold necklace.jpg', 1, 40, 50.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1004', 'Tamara Necklace', 'Three layer coin gold necklace.', 'assets/images/products/necklaces/Three layer coin gold necklace.jpg', 1, 70, 65.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1005', 'Zadie Necklace', 'Three layer gold knot necklace.', 'assets/images/products/necklaces/Three layer gold knot necklace.jpg', 1, 40, 55.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1006', 'Monica Necklace', 'Two layer gold necklace.', 'assets/images/products/necklaces/Two layer gold necklace.jpg', 1, 6, 63.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1007', 'Birch Necklace', 'Gold leaf pendant necklace.', 'assets/images/products/necklaces/Gold leaf pendant necklace.jpg', 1, 70, 53.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1008', 'Amour Necklace', 'Pearl heart pair of necklaces.', 'assets/images/products/necklaces/Pearl heart pair of necklaces.jpg', 1, 40, 23.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1009', 'Emily Necklace', 'Shell pendant gold necklace.', 'assets/images/products/necklaces/Shell pendant gold necklace.jpg', 1, 56, 25.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1010', 'Tiffany Necklace', 'Square diamond with diamond surround silver necklace.', 'assets/images/products/necklaces/Square diamond with diamond surround silver necklace.jpg', 1, 4, 150.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1011', 'Meredith Necklace', 'Three layer gem pendant gold necklace.', 'assets/images/products/necklaces/Three layer gem pendant gold necklace.jpg', 1, 20, 35.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1012', 'London Necklace', 'Three layer silver chain necklace.', 'assets/images/products/necklaces/Three layer silver chain necklace.jpg', 1, 30, 50.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1013', 'Grainne Necklace', 'Two layer quartz gold necklace.', 'assets/images/products/necklaces/Two layer quartz gold necklace.jpg', 1, 74, 40.99, 4, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('NECKLACE-1014', 'Corra Necklace', 'World coin pendant gold necklace.', 'assets/images/products/necklaces/World coin pendant gold necklace.jpg', 1, 14, 43.99, 4, NOW());
