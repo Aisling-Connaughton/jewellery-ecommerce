@@ -24,21 +24,21 @@ body {
   color: var(--mainBlack);
   background: var(--mainWhite);
   font-family: var(--fontFamily);
-  font-size: 18px;
+  font-size: 1.2em;
 }
 
 /* --- NAVBAR --- */
 .navbar {
-  background-color: var(--mainWhite) !important;
+  background-color: var(--mainWhite)!important;
 }
 
 .navbar li a {
-  color: var(--mainBlack) !important;
-  font-size: 1.2em !important;
+  color: var(--mainBlack)!important;
+  font-size: 1.2em!important;
 }
 
 .navbar li a:hover {
-  color: var(--primaryColor) !important;
+  color: var(--primaryColor)!important;
   transition: var(--mainTransition);
 }
 
@@ -132,6 +132,7 @@ body {
   transition: var(--mainTransition);
   visibility: hidden;
   cursor: pointer;
+  font-size: 1.1em;
 }
 
 .fa-shopping-cart {
@@ -153,7 +154,7 @@ body {
 }
 
 .product h3 {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   margin-top: 1rem;
   letter-spacing: var(--mainSpacing);
   text-align: left;
@@ -165,7 +166,7 @@ body {
   letter-spacing: var(--mainSpacing);
   color: var(--mainBlack);
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 300;
 }
 
@@ -250,7 +251,41 @@ body {
 
 /* ----- END of PAGINATION --------- */
 
+/* ---- CART DETAILS --------- */
+.cart-details .card {
+  border: none;
+}
+
+.cart-details img {
+  max-width: 100%; 
+  width: 250px; 
+  overflow: hidden;
+}
+
+.cart-details button i {
+  font-size: 10px;
+}
+
+.cart-summary {
+  font-weight: bold;
+}
+
+/* ----- END of CART DETAILS ----- */
+
 /*---- CHECKOUT FORM ------------ */
+.checkout .type {
+  width: 100%;
+}
+
+.checkout select {
+  width: 50%;
+}
+
+@media (max-width: 720px) {
+  .checkout select {
+    width: 100%;
+  }
+}
 
 /*---- END of CHECKOUT FORM ------------ */
 
