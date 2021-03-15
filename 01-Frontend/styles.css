@@ -1,0 +1,316 @@
+/* --- SETUP --- */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+/* css variables */
+:root {
+  --primaryColor: #cd5d5c;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+  --secondTransition: all 0.3s ease-in-out;
+  --fontFamily: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: var(--fontFamily);
+  font-size: 18px;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  background-color: var(--mainWhite) !important;
+}
+
+.navbar li a {
+  color: var(--mainBlack) !important;
+  font-size: 1.2em !important;
+}
+
+.navbar li a:hover {
+  color: var(--primaryColor) !important;
+  transition: var(--mainTransition);
+}
+
+.active-link {
+  font-weight: bold;
+}
+
+/* brand image */
+.navbar-center img {
+  max-height: 130px;
+}
+
+/* search */
+.input-group-text {
+  background: transparent;
+  border: none;
+}
+
+/* icons */
+.search-icon {
+  font-size: 1.8rem;
+  margin: 0 0.1rem;
+  cursor: pointer;
+  color: var(--mainBlack);
+}
+
+.nav-icon {
+  font-size: 1.8rem;
+  margin: 0 0.7rem;
+  cursor: pointer;
+}
+
+.nav-icon > a {
+  color: var(--mainBlack)!important;
+}
+
+/* cart button */
+.cart-btn {
+  position: relative;
+}
+
+.cart-items {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--primaryColor);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+}
+
+.cart-container {
+  margin: 2%;
+}
+
+/* ----- END of NAVBAR --- */
+
+/* ----- PRODUCTS ---- */
+.product-container {
+  margin: 2% 5%;
+}
+
+.product:hover {
+  cursor: pointer;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-img {
+  display: block;
+  transition: var(--mainTransition);
+}
+
+.bag-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-family: var(--fontFamily);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+  text-transform: capitalize;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: var(--mainSpacing);
+  font-weight: 300;
+  transition: var(--mainTransition);
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.fa-shopping-cart {
+  margin-right: 0.5rem;
+}
+
+.img-container:hover .product-img {
+  opacity: 0.5;
+}
+
+.img-container:hover .bag-btn {
+  visibility: visible;
+  transition: var(--mainTransition);
+}
+
+.bag-btn:hover {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+}
+
+.product h3 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: left;
+  font-weight: 500;
+}
+
+.product h4 {
+  margin-top: 0.7rem;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainBlack);
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.card-body a {
+  color: var(--mainBlack) !important;
+}
+
+.card-body a:hover {
+  color: var(--primaryColor) !important;
+  transition: var(--mainTransition);
+  text-decoration: none;
+}
+
+.product-div > h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.product-div > h3 {
+  font-size: 1.5rem;
+  font-weight: normal!important;
+  margin: 1rem 0;
+}
+
+.product-div > p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+/* ----- END of PRODUCTS ---- */
+
+/* ------ PRODUCT DETAILS ----- */
+.purchase-btn {
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  font-family: var(--fontFamily);
+  letter-spacing: var(--mainSpacing);
+  font-size: 1.2rem;
+  background: var(--mainWhite);
+  color: var(--mainBlack);
+  border: 1px solid var(--mainBlack);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+.purchase-btn:hover {
+  color: var(--mainWhite);
+  background-color: var(--mainBlack);
+}
+/* ------ END of PRODUCT DETAILS ----- */
+
+/* ----- PAGINATION --------- */
+.pagination > li > a
+{
+    background-color: var(--mainWhite);
+    color: var(--mainBlack);
+    border: none!important;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: var(--mainWhite);
+    background-color: var(--primaryColor);
+    border-color: var(--primaryColor);
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color:var(--primaryColor) !Important;
+    border: solid 1px var(--primaryColor) !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color:var(--primaryColor) !Important;
+    border: solid 1px var(--primaryColor);
+}
+
+/* ----- END of PAGINATION --------- */
+
+/*---- CHECKOUT FORM ------------ */
+
+/*---- END of CHECKOUT FORM ------------ */
+
+/* ----- ERROR PAGE ---- */
+.error-div {
+  text-align: center;
+  color: var(--primaryColor);
+}
+
+.error-div > h2 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.error-div > h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+/* ----- END of ERROR PAGE ---- */
+
+/* ---- FOOTER ----- */
+.information {
+  padding: 4rem 0;
+}
+
+.info-sections {
+  width: 80vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-column-gap: 3.5rem;
+  grid-row-gap: 3.5rem;
+}
+
+.info-section p {
+  text-transform: capitalize;
+  padding: 5px 0;
+}
+
+.info-title {
+  font-weight: 580;
+}
+
+#email {
+  text-transform: lowercase;
+}
+
+.info-section a {
+  color: var(--mainBlack);
+}
+
+.footer-bottom {
+  background-color: var(--mainBlack);
+  color: var(--mainWhite);
+  padding: 2rem 1rem;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/* ---- END of FOOTER ----- */

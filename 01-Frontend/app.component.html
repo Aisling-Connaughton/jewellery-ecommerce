@@ -1,0 +1,48 @@
+<div class="container-fluid">
+<!-- Navbar -->
+<!-- logo -->
+<nav class="navbar-center">
+  <div class="d-flex justify-content-center">
+    <a class="navbar-brand" routerLink="/products"><img src="../assets/images/brand-logo-name.PNG" alt="Dream Jewellery"></a>
+  </div>
+</nav>
+
+<!-- navbar with menu, search bar, cart-->
+<app-product-category-menu></app-product-category-menu>
+
+<!-- End of Navbar-->
+<!-- Main Content-->
+<!-- <app-homepage></app-homepage> -->
+<router-outlet></router-outlet>
+<!-- <app-product-list></app-product-list> -->
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="information">
+    <div class="info-sections">
+      <div class="info-section">
+        <p class="info-title">opening hours</p>
+        <p><span class="days">Mon - Thurs: </span><span class="hours">10am - 5pm</span></p>
+        <p><span class="days">Sat - Fri: </span><span class="hours">9am - 7pm</span></p>
+        <p><span class="days">Sun: </span><span class="hours">12am - 4pm</span></p>
+      </div>
+      <div class="info-section">
+        <p class="info-title">contact us</p>
+        <p>12 Main Road, Limerick, Ireland.</p>
+        <p>(061) 987 6543</p>
+        <p id="email">contact@dreamjewellery.ie</p>
+      </div>
+      <div class="info-section">
+        <p class="info-title">information</p>
+        <p><a href="/">about us</a></p>
+        <p><a href="/">Jewellery care</a></p>
+        <p><a href="/">delivery & returns</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright &copy; Dream Jewellery 2021</p>
+  </div>
+</footer>
+<!-- End of Footer -->
+</div>
